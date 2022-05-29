@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AuthContext } from "../contexts/auth";
+
 import { Title, TitleMenor, Login, Field, Actions } from  "./styles";
 
 const LoginPage = () => {
+    const { authenticated, login } = useContext
+    (AuthContext);
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("submit", { email, password })
+
+        login(email, password); // integração com o contexto / api
     }
 
 
@@ -15,6 +22,7 @@ const LoginPage = () => {
     <Login>
         <Title fontSize={20}>
             Login do Sistema<br></br>
+            <p1>{String(authenticated)}</p1>
             <span>Prepare-se para uma experiência incrível<br></br></span>
         </Title>
         <TitleMenor>Aqui eu coloco o Lorem Ipsum</TitleMenor>
