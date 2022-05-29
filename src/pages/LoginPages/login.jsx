@@ -1,5 +1,8 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../contexts/auth";
+import Input from "../../components/Icon";
+import styled from 'styled-components';
+import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 
 import { Title, TitleMenor, Login, Field, Actions } from  "./styles";
 
@@ -29,16 +32,20 @@ const LoginPage = () => {
         <form action="" className="form" onSubmit={handleSubmit}>
             <Field>
                 <label htmlFor="email">Email</label>
-                <input type="email"
+                <Input type="email"
+                 placeholder="Email"
                  name="email"
                  id="email"
                  value={email}
                  onChange={(e) => setEmail(e.target.value)}
                  />
             </Field>
+            <br></br>
+            <br></br>
             <Field>
                 <label htmlFor="Password">Password</label>
-                <input type="Password" 
+                <Input type="Password"
+                placeholder="Password" 
                 name="Password" 
                 id="Password" 
                 value={password} 

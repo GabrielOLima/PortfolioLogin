@@ -3,6 +3,11 @@ import styled from "styled-components"
 export const Title = styled.h1`
     color: #f00;
     font-size: ${ props => `${props.fontSize}px` };
+    margin: 3rem 0 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     span {
         font-size: 12px;
         content: "\a";
@@ -23,8 +28,20 @@ export const Login = styled.div`
     justify-content: center;
     min-height: 2.5rem;
     padding: 0 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0px 8px 32px rgba(31, 38, 145, 0.37);
+    backdrop-filter: blur(8.5px);
+    border-radius: 20px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
     form {
-        background-color: #f1f1ff;
+        //background-color: #f1f1ff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 20%;
         width: 100%;
         max-width: 480px;
         padding: 0.5rem;
