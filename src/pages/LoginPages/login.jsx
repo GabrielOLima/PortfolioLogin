@@ -1,10 +1,12 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../contexts/auth";
-import Input from "../../components/Icon";
+import Input from "../../components/Input";
+import Button from "../../components/Button";
+import Icon from "../../components/Icon";
 import styled from 'styled-components';
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 
-import { Title, TitleMenor, Login, Field, Actions } from  "./styles";
+import { Title, TitleMenor, Login, Field, Actions, ButtonContainer, LoginWith, HorizontalRule, IconsContainer, ForgotPassword } from  "./styles";
 
 const LoginPage = () => {
     const { authenticated, login } = useContext
@@ -19,6 +21,10 @@ const LoginPage = () => {
 
         login(email, password); // integração com o contexto / api
     }
+
+    const FacebookBackground= "linear-gradient(to right, #0546A0 0%, #663FB6 100%)"
+    const InstagramBackground= "linear-gradient(to right, #0546A0 0%, #663FB6 100%)"
+    const TwitterBackground= "linear-gradient(to right, #0546A0 0%, #663FB6 100%)"
 
 
   return (
@@ -53,8 +59,24 @@ const LoginPage = () => {
                  />
             </Field>
             <Actions>
-                <button type="submit">Entrar</button>
+                <ButtonContainer>
+                    <Button type="Submit" content="Entrar"></Button>
+                </ButtonContainer>
             </Actions>
+            <LoginWith>or Login With</LoginWith>
+        <HorizontalRule />
+        <IconsContainer>
+            <Icon color={FacebookBackground}>
+                <FaFacebookF></FaFacebookF>
+            </Icon>
+            <Icon color={InstagramBackground}>
+                <FaInstagram></FaInstagram>
+            </Icon>
+            <Icon color={TwitterBackground}>
+                <FaTwitter></FaTwitter>
+            </Icon>
+        </IconsContainer>
+        <ForgotPassword>Forgot Password?</ForgotPassword>
         </form>
     </Login>
   );

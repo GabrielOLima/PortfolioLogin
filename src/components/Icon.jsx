@@ -1,36 +1,30 @@
-import React from 'react';
 import styled from 'styled-components';
+import React from 'react';
+import { Title, TitleMenor, Login, Field, Actions, ButtonContainer, LoginWith, HorizontalRule, IconsContainer, ForgotPassword } from  "../pages/LoginPages/styles"
 
 // import { Container } from './styles';
 
-export default function Input({type,placeholder}) {
+export default function Icon({color, children}) {
   return (
-    <StyledInput type={type} placeholder={placeholder} />
+    <StyledIcon background={color}>{children}</StyledIcon>
   )
 
 }
 
-const StyledInput = styled.input`
-    background: rgba(255,255,255,0.15);
+const StyledIcon = styled(Login)`
+    background: ${(props) => props.background};
     box-shadow: 0 8px 32px 0 rgba(31,38,135, 0.37);
     border-radius: 2rem;
-    width: 80%;
-    height: 3rem;
-    padding: 0.8rem;
-    border:none;
-    outline: none;
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    font-weight:bold;
-    &:focus {
-        display: inline-block;
-        box-shadow: 0 0 0 0.2rem #b9abe0;
-        backdrop-filter: blur(12rem);
-        border-radius: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4rem;
+    color: white;
+    cursor: pointer;
+    svg {
+      width: 1.5rem;
+      height:1.5rem;
     }
-    &::placeholder {
-        color: #b9abe099;
-        font-weight: 100;
-        font-size: 1rem;
-    }
-`
+`;
